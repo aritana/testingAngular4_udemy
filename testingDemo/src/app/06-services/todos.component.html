@@ -1,0 +1,16 @@
+<div>
+    <h1>Todo List</h1>
+  
+    <div *ngIf="message" class="error">
+      {{ message }}
+    </div>
+  
+    <ul>
+      <li *ngFor="let todo of todos">
+        {{ todo.title }}
+        <button (click)="delete(todo.id)">Delete</button>
+      </li>
+    </ul>
+  
+    <button (click)="add()">Add Todo</button>
+  </div>  
