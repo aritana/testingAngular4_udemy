@@ -9,10 +9,11 @@ describe('VoteComponent', () => {
 
   it('should raise voteChanged event when upvoted', () => {
     //Arrange
-    spyOn(component.voteChanged,'emit');
+    let totalVotes:number | undefined;
+    component.voteChanged.subscribe(tv=> totalVotes = tv);
     //Act
     component.upVote();
     //Assert
-    expect(component.voteChanged.emit).toHaveBeenCalledWith(1);
+    expect(totalVotes).toBe(1);
   });
 });

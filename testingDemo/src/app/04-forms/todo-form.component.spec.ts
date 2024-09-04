@@ -18,7 +18,7 @@ describe('TodoFormComponent', () => {
     let control  = component.form.get('name');
     //Act
     control?.setValue('');
-    //Arrange
+    //Assert
     expect(control?.valid).toBeFalsy();  
   });
 });
