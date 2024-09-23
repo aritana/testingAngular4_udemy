@@ -21,7 +21,7 @@ export class TodosComponent {
     var newTodo = { title: '... ' };
     this.service.add(newTodo).subscribe(
       t => this.todos.push(t),
-      err => this.message = err);
+      err => this.message = err.message);
   }
 
   delete(id:number) {
